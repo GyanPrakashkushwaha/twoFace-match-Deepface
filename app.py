@@ -6,7 +6,7 @@ from src.save_img import save_uploaded_img_face1 , save_uploaded_img_face2
 from src.similarity import Similarity
 
 
-st.set_page_config(page_title="Two-Face", page_icon=":😄:", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Two-Face-Similarity", page_icon=":🙂:", layout="wide", initial_sidebar_state="expanded")
 
 selected_model = st.sidebar.selectbox("Select Model", options= ['VGG-Face','FaceNet','Facenet512','OpenFace','DeepFace','DeepID','ArcFace','Dlib','SFace'])
 selected_backend = st.sidebar.selectbox("Select Backend", options=  ['opencv','ssd','dblib','mtcnn','retinaface','mediapipe'])
@@ -41,13 +41,15 @@ if img1 and img2 is not None:
 
         img1_path = image_path=os.path.join('images/uploaded_images/face1',img1.name)
         img2_path = image_path=os.path.join('images/uploaded_images/face2',img2.name)
-        try:
-            sim = Similarity()
 
-            similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
-            st.title(f'Similarity score: {similarity_score} %')
-        except:
-            st.write('Please select Different Backend Or Model')
+        if st.button('Show Similarity'):
+            try:
+                sim = Similarity()
+
+                similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
+                st.title(f'Similarity score: {similarity_score} %')
+            except:
+                st.write('Please select Different Backend Or Model')
 
 
        
