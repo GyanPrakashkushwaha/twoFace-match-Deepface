@@ -1,14 +1,15 @@
 
 import streamlit as st
-
-
-
-
-
-
+from PIL import Image
+import os
+from src.save_img import save_uploaded_img_face1 , save_uploaded_img_face2
+from src.similarity import Similarity
 
 
 st.set_page_config(page_title="Two-Face", page_icon=":😄:", layout="wide", initial_sidebar_state="expanded")
+
+selected_model = st.sidebar.selectbox("Select Model", options= ['VGG-Face','FaceNet','Facenet512','OpenFace','DeepFace','DeepID','ArcFace','Dlib','SFace'])
+selected_backend = st.sidebar.selectbox("Select Backend", options=  ['opencv','ssd','dblib','mtcnn','retinaface','mediapipe'])
 
 
 st.title('Two Faces✌🏻(Similarity between two Faces)')
@@ -19,10 +20,12 @@ with col1:
 with col2:
     img2 = st.file_uploader('Upload New Image')
 
+
+
 if img1 and img2 is not None:
-    if save_uploaded_img(img1) and save_uploaded_img(img2):
-        face_array1 = detect_face(image_path=os.path.join('uploaded_images',img1.name))
-        face_array2 = detect_face(image_path=os.path.join('uploaded_images',img2.name))
+    if save_uploaded_img_face1(img1) and save_uploaded_img_face2(img2):
+        # face_array1 = detect_face(image_path=os.path.join('uploaded_images',img1.name))
+        # face_array2 = detect_face(image_path=os.path.join('uploaded_images',img2.name))
         display_img1 = Image.open(img1)
         display_img2 = Image.open(img2)
 
@@ -36,9 +39,15 @@ if img1 and img2 is not None:
             st.image(image=display_img2,width=350,channels='BGR',caption='Your New Image')
             # st.write(face_array2)
 
-        rec = Recommend()
-        pred1 , pred2 = rec.prediction(face_array1=face_array1,face_array2=face_array2)
+        img1_path = image_path=os.path.join('images/uploaded_images/face1',img1.name)
+        img2_path = image_path=os.path.join('images/uploaded_images/face2',img2.name)
+        try:
+            sim = Similarity()
 
-        output = rec.similarity(result1=pred1,result2=pred2)
-        st.markdown(f'> ## Both Faces Similarity score is :{round(100*(output[0][0]),ndigits=3)}%')
-        
+            similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
+            st.title(f'Similarity score: {similarity_score} %')
+        except:
+            st.write('Please select Different Backend Or Model')
+
+
+       
