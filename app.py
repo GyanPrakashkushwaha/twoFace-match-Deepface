@@ -4,12 +4,29 @@ from PIL import Image
 import os
 from src.save_img import save_uploaded_img_face1 , save_uploaded_img_face2
 from src.similarity import Similarity
-
+from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Two-Face-Similarity", page_icon=":🙂:", layout="wide", initial_sidebar_state="expanded")
 
-selected_model = st.sidebar.selectbox("Select Model", options= ['VGG-Face','FaceNet','Facenet512','OpenFace','DeepFace','DeepID','ArcFace','Dlib','SFace'])
-selected_backend = st.sidebar.selectbox("Select Backend", options=  ['opencv','ssd','dblib','mtcnn','retinaface','mediapipe'])
+selected_mode = option_menu(menu_title=None,
+                        options=['Camera','Pictures'],
+                        icons=['camera-fill','images'],
+                        orientation='horizontal',
+                        menu_icon='airplane-engines-fill')
+
+
+with st.sidebar:
+
+    selected_model = option_menu(menu_title='SELECT MODEL',
+                        options=['VGG-Face','FaceNet','Facenet512','OpenFace','DeepFace','DeepID','ArcFace','Dlib','SFace'],
+                        # icons=['GlyphCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft'],
+                        # orientation='horizontal',
+                        menu_icon='airplane-engines-fill')
+
+    selected_backend = option_menu(menu_title='SELECT BACKEND',
+                      options=['opencv','ssd','dblib','mtcnn','retinaface','mediapipe'],
+                    #   orientation='horizontal',
+                      menu_icon='rocket-takeoff-fill')
 
 
 st.title('Two Faces✌🏻(Similarity between two Faces)')
