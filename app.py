@@ -77,7 +77,7 @@ else:
                 sim = Similarity()
 
                 similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
-                st.markdown(f'>## 👀Similarity score is {similarity_score} %\n made by 👨🏻‍💻Gyan Prakash Kushwaha ')
+                st.markdown(f'>## 👀Similarity between faces is {similarity_score} % 👀\n made by 👨🏻‍💻Gyan Prakash Kushwaha ')
                 st.markdown(f"#### Utilizing the DeepFace Library, informed by a dataset of 4M images across 4K identities curated by Facebook researchers, My 'Two Faces✌🏻' project gauges facial similarity with precision.")
             except Exception as e:
                 st.write(f'Please select Different Backend Or Model {e}')
