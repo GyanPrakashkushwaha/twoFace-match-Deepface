@@ -51,7 +51,7 @@ if selected_mode == 'Pictures':
                     st.title(f'Similarity score: {similarity_score} %')
                 except Exception as e:
                     if selected_mode == 'VGG-Face' or selected_backend == 'opencv':
-                        st.markdown(f'>### Please show your Face Lazy Human🙄. This model can only Show similarity by detecting face.')
+                        st.markdown(f'>### Please show your Face *Lazy Human🙄*. This model can only Show similarity by detecting face.')
                     else:
                         st.markdown(f'>### Please select another model Or backend.')
 
