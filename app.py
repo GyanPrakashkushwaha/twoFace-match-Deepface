@@ -5,18 +5,15 @@ import os
 from src.save_img import save_uploaded_img_face1 , save_uploaded_img_face2
 from src.similarity import Similarity
 from src.option_menus import option_menus
-from src.pictures_mode import pictures_mode
-from src.camera_mode import camera_mode
 from src.remove_ import remove
 
-st.set_page_config(page_title="Two-Face-Similarity", page_icon=":🙂:", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Two-Face-Similarity", page_icon=":👀:", layout="wide", initial_sidebar_state="expanded")
 
 selected_mode , selected_model , selected_backend = option_menus()
 remove()
 
 
-st.title('Two Faces✌🏻(Similarity between two Faces)')
-# st.markdown('> #### This Poject is made using  ')
+st.title('Two✌🏻Faces🙂(Similarity between two Faces)')
 
 
 if selected_mode == 'Pictures':
@@ -80,7 +77,8 @@ else:
                 sim = Similarity()
 
                 similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
-                st.title(f'🙂Similarity score is {similarity_score} %\n made by 👨🏻‍💻Gyan Prakash Kushwaha')
+                st.markdown(f'>## 👀Similarity score is {similarity_score} %\n made by 👨🏻‍💻Gyan Prakash Kushwaha ')
+                st.markdown(f"#### Utilizing the DeepFace Library, informed by a dataset of 4M images across 4K identities curated by Facebook researchers, My 'Two Faces✌🏻' project gauges facial similarity with precision.")
             except Exception as e:
                 st.write(f'Please select Different Backend Or Model {e}')
 
