@@ -24,7 +24,7 @@ if selected_mode == 'Pictures':
         img1 = st.file_uploader('Upload Image',key='image1')
 
     with col2:
-        img2 = st.file_uploader('Upload New Image',key='image2')
+        img2 = st.file_uploader('Upload New Image ',key='image2')
 
 
     if img1 and img2 is not None:
@@ -60,10 +60,10 @@ if selected_mode == 'Pictures':
 else:
     col1 ,col2 = st.columns(2)
     with col1:
-        img1_cam = st.camera_input('Smile Please',key='image111')
+        img1_cam = st.camera_input('Please click Image',key='image111')
 
     with col2:
-        img2_cam = st.camera_input('Smile Please new',key='image222')
+        img2_cam = st.camera_input('Please click new Image',key='image222')
 
 
     if img1_cam and img2_cam is not None:
