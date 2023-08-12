@@ -9,11 +9,13 @@ from src.remove_ import remove
 
 st.set_page_config(page_title="Two-Face-Similarity", page_icon=":👀:", layout="wide", initial_sidebar_state="expanded")
 
-selected_mode , selected_model , selected_backend = option_menus()
-remove()
 
 
 st.title('Two✌🏻Faces🙂(Similarity between two Faces)')
+selected_mode , selected_model , selected_backend = option_menus()
+remove()
+st.markdown('>##### *Guide*: :choose Please add 2 Images and then click to show similarity button the model will show you similarity score between two Images that you have given. ')
+
 
 
 if selected_mode == 'Pictures':
