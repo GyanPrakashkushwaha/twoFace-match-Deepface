@@ -1,13 +1,12 @@
-
 import streamlit as st
 from PIL import Image
 import os
 from src.save_img import save_uploaded_img_face1 , save_uploaded_img_face2
 
+
 def camera_mode():
     col1 ,col2 = st.columns(2)
     with col1:
-
         img1 = st.camera_input('Smile Please',key='Hello')
 
     with col2:

@@ -9,10 +9,10 @@ def pictures_mode():
         
     col1 ,col2 = st.columns(2)
     with col1:
-        img1 = st.file_uploader('Upload Image')
+        img1 = st.file_uploader('Upload Image',key='image1')
 
     with col2:
-        img2 = st.file_uploader('Upload New Image')
+        img2 = st.file_uploader('Upload New Image',key='image2')
 
 
     if img1 and img2 is not None:
