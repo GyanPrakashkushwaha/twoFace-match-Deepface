@@ -11,3 +11,6 @@ class Similarity:
         # round(100*(1- sim['distance']),ndigits=3)
         
         return simialrity_in_percentage
+    
+
+    

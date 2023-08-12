@@ -42,15 +42,6 @@ else:
             except:
                 st.write('Please select Different Backend Or Model')
 
-                
-
-
-
-
-    # st.camera_input(label='Smile Please'
-    #     # access_camera()
-    #     )
-    # # access_camera()
 
     st.write('camera mode.')
 
