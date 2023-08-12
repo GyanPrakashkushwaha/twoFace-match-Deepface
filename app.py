@@ -85,5 +85,3 @@ else:
                 st.write(f'Please select Different Backend Or Model {e}')
 
 
-# st.markdown('---')
-# st.markdown('> ### \n Made by Gyan Prakash Kushwaha')
