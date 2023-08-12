@@ -17,8 +17,6 @@ st.title('Two✌🏻Faces🙂(Similarity between two Faces)')
 
 
 if selected_mode == 'Pictures':
-   
-
     col1 ,col2 = st.columns(2)
     with col1:
         img1 = st.file_uploader('Upload Image',key='image1')
@@ -49,14 +47,15 @@ if selected_mode == 'Pictures':
 
                     similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
                     st.title(f'Similarity score: {similarity_score} %')
-                except:
-                    st.write('Please select Different Backend Or Model')
+                except Exception as e:
+                    if selected_mode == 'VGG-Face' or selected_backend == 'opencv':
+                        st.markdown(f'>### Please show your Face this model can only Show similarity by detecting face.')
+                    else:
+                        st.markdown(f'>### Please select another model Or backend.')
+
 
 
 else:
-    # if camera_mode() is not None:
-        # img1_path1 , img2_path2 = camera_mode()
-
     col1 ,col2 = st.columns(2)
     with col1:
         img1_cam = st.camera_input('Smile Please',key='image111')

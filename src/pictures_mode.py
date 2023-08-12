@@ -38,17 +38,5 @@ def pictures_mode():
         else:
             return None ,None
 
-            # if st.button('Show Similarity'):
-            #     try:
-            #         sim = Similarity()
-
-            #         similarity_score = sim.similarity(img1=img1_path,img2=img2_path,backend=selected_backend,model=selected_model)
-            #         st.title(f'Similarity score: {similarity_score} %')
-            #     except:
-            #         st.write('Please select Different Backend Or Model')
-
-
-                
-
 
 
