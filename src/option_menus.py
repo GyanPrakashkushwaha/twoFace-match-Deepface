@@ -16,7 +16,7 @@ def option_menus():
     with st.sidebar:
 
         selected_model = option_menu(menu_title='SELECT MODEL',
-                            options=['VGG-Face','FaceNet','Facenet512','OpenFace','DeepFace','DeepID','ArcFace','Dlib','SFace'],
+                            options=['VGG-Face','Facenet512','OpenFace','DeepFace','DeepID','ArcFace','Dlib','SFace'],
                             # icons=['GlyphCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft', 'IconCraft'],
                             # orientation='horizontal',
                             menu_icon='airplane-engines-fill')
