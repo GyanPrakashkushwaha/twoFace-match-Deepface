@@ -1,3 +1,10 @@
+# twoFace-match-Deepface
+---
+#### Link- https://twoface-match-deepface-gyan-prakash-kuswaha.streamlit.app/
+
+## Demo
+https://github.com/GyanPrakashkushwaha/twoFace-match-Deepface/assets/127115588/5feda6c6-a48f-4de2-bcb6-5e53a8033400
+
 <p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
@@ -19,18 +26,6 @@
 <p align="center"> Few lines describing your project.
     <br> 
 </p>
-
-## 📝 Table of Contents
-
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
